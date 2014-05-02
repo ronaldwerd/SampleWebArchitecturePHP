@@ -15,7 +15,7 @@ var AppMain = {
                 colors.each(function(c) {
 
                     var trow = _.template('<tr class="<%= bgColor %>">'  +
-                                          '<td><a href="#" data-cid="<%= cid %>" class="color_link"><%= colorName %></a><td>' +
+                                          '<td><a href="#" data-cid="<%= cid %>" class="color_link"><%= colorName %></a><td class="vote_count"></td>' +
                                           '</tr>', {colorName: c.get('colorName'), cid: c.get('id'), bgColor: cycle});
 
                     $("#color_table tbody").append(trow);

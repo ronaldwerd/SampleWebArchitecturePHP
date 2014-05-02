@@ -15,21 +15,36 @@ var AppMain = {
                 colors.each(function(c) {
 
                     var trow = _.template('<tr class="<%= bgColor %>">'  +
-                                          '<td><a href="#"><%= colorName %></a><td>' +
-                                          '</tr>', {colorName: c.get('colorName'), cid: 0, bgColor: cycle});
+                                          '<td><a href="#" data-cid="<%= cid %>" class="color_link"><%= colorName %></a><td>' +
+                                          '</tr>', {colorName: c.get('colorName'), cid: c.get('id'), bgColor: cycle});
 
                     $("#color_table tbody").append(trow);
 
                     if(cycle == 'odd') cycle = 'even'; else cycle = 'odd';
                 });
 
-                console.log('rewind?');
 
-                colors.each(function(c) {
-                    console.log(c);
+                $('.color_link').click(function() {
+                    AppMain.colorClick(this);
                 });
             }
         })
+    },
+
+    colorClick: function(lnk) {
+
+        var colorId = $(lnk).data('cid');
+        var votes = new AppMain.Collections.Votes();
+
+        var voteCell = $(lnk).parent().next().get(0);
+
+        votes.url += "/color/" + colorId;
+
+        votes.fetch({
+            success: function() {
+                $(voteCell).text(votes.totalVotes());
+            }
+        });
     },
 
     run: function() {

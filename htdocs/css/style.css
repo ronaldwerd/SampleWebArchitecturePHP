@@ -12,7 +12,12 @@
     color: white;
 }
 
-h1 {
+.panel {
+    width: 33%;
+    margin: auto;
+}
+
+.panel h1 {
     font-size: 64pt;
     font-weight: bold;
     color: white;
@@ -20,11 +25,8 @@ h1 {
 
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #4c8abd;
-}
 
-.panel {
-    width: 33%;
-    margin: auto;
+    text-align: center;
 }
 
 .odd {

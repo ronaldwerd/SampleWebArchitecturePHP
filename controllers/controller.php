@@ -8,7 +8,7 @@ abstract class Controller
 
     public $isSSL = false;
 
-    function __construct()
+    public function __construct()
     {
         /*
          * This is very handy if you want to force SSL on only for specific sections of your website.

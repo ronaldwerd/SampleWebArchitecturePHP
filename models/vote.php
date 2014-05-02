@@ -5,10 +5,10 @@ class Vote extends DBModel
     protected $primaryKey = 'id';
     protected $table = 'vote';
 
-    var $id;
-    var $cityName;
-    var $colorId;
-    var $voteCount;
+    public $id;
+    public $cityName;
+    public $colorId;
+    public $voteCount;
 
     /*
      * The datamap maps database table columns to class members.

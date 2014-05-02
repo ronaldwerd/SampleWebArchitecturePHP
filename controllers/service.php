@@ -2,18 +2,20 @@
 
 class Service extends Controller {
 
-    function __construct()
+    public function __construct()
     {
+        parent::__construct();
+
         header("Content-type:application/json\n\n");
     }
 
-    function colors()
+    public function colors()
     {
         $colors = Color::findAll();
         echo json_encode($colors);
     }
 
-    function votes()
+    public function votes()
     {
         switch($this->params[2]) {
 

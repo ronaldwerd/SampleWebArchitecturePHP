@@ -6,7 +6,7 @@ class Route {
     var $controllerMethod;
     var $controllerClassName;
 
-    function __construct($route)
+    public function __construct($route)
     {
         $this->controllerSlug = 'index';
         $this->controllerMethod = 'index';
@@ -30,17 +30,17 @@ class Route {
         }
     }
 
-    function getControllerFile()
+    public function getControllerFile()
     {
         return APP_ROOT . "/controllers/" . $this->controllerSlug . ".php";
     }
 
-    function getControllerMethod()
+    public function getControllerMethod()
     {
         return $this->controllerMethod;
     }
 
-    function getControllerClassName()
+    public function getControllerClassName()
     {
         return $this->controllerClassName;
     }

@@ -72,7 +72,7 @@ abstract class DBModel
     }
 
 
-    static function executePrepared($sql, $vars = null)
+    protected static function executePrepared($sql, $vars = null)
     {
         $stmt = self::$dbh->prepare($sql);
 

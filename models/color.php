@@ -5,8 +5,8 @@ class Color extends DBModel
     protected $primaryKey = 'id';
     protected $table = 'color';
 
-    var $id;
-    var $colorName;
+    public $id;
+    public $colorName;
 
     /*
      * The datamap maps database table columns to class members.

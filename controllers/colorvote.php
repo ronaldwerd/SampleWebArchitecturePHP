@@ -2,7 +2,7 @@
 
 class ColorVote extends Controller
 {
-    function index()
+    public function index()
     {
         $this->view('colorvote/index');
     }

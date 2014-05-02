@@ -4,6 +4,7 @@
 
 .table td {
     padding: 5px;
+    width: 100%;
 }
 
 .table thead td {
@@ -14,11 +15,31 @@
 h1 {
     font-size: 64pt;
     font-weight: bold;
-    color: #4c8abd;
+    color: white;
     font-family: Arial;
+
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #4c8abd;
 }
 
 .panel {
     width: 33%;
     margin: auto;
+}
+
+.odd {
+    background-color: #cfd9e7;
+}
+
+.event {
+    background-color: #e8edf3;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: orange;
 }

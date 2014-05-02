@@ -5,6 +5,7 @@
     <title>Sample PHP - Colors</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/vendor/jquery-2.1.0.js"></script>
+    <script src="js/vendor/jquery-humanize-number.js"></script>
     <script src="js/vendor/underscore.js"></script>
     <script src="js/vendor/backbone.js"></script>
     <script src="js/app.js"></script>
@@ -15,7 +16,7 @@
     <div class="panel">
         <h1>Colors</h1>
 
-        <table class="table">
+        <table class="table" id="color_table">
             <thead>
                 <tr>
                     <td>Color</td>
@@ -23,12 +24,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        werd
-                    </td>
-                </tr>
+
             </tbody>
+            <tfoot>
+                <tr>
+                    <td>TOTAL</td>
+                    <td><span id="vote_total">1000</span></td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </body>

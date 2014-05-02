@@ -5,32 +5,31 @@ var AppMain = {
 
     loadData: function() {
 
-        var colors = new AppMain.Collections.Colors(); colors.fetch();
+        var colors = new AppMain.Collections.Colors();
 
         colors.fetch({
             success: function() {
 
-                var votes = new AppMain.Collections.Votes()
+                var cycle = 'odd';
 
-                votes.fetch({
-                    success: function() {
+                colors.each(function(c) {
 
-                        colors.each(function(c) {
-                            console.log(c);
-                        });
+                    var trow = _.template('<tr class="<%= bgColor %>">'  +
+                                          '<td><a href="#"><%= colorName %></a><td>' +
+                                          '</tr>', {colorName: c.get('colorName'), cid: 0, bgColor: cycle});
 
-                        console.log('rewind?');
+                    $("#color_table tbody").append(trow);
 
-                        colors.each(function(c) {
-                            console.log(c);
-                        });
+                    if(cycle == 'odd') cycle = 'even'; else cycle = 'odd';
+                });
 
+                console.log('rewind?');
 
-                        console.log('Vote count: ' + votes.totalVotes());
-                    }
-                })
+                colors.each(function(c) {
+                    console.log(c);
+                });
             }
-        });
+        })
     },
 
     run: function() {
@@ -38,6 +37,6 @@ var AppMain = {
     }
 };
 
-$(document).ready(function(){
+$(document).ready(function() {
     AppMain.run();
 });

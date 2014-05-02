@@ -19,8 +19,8 @@
         <table class="table" id="color_table">
             <thead>
                 <tr>
-                    <td>Color</td>
-                    <td>Votes</td>
+                    <td style="width: 50%">Color</td>
+                    <td style="width: 50%">Votes</td>
                 </tr>
             </thead>
             <tbody>
@@ -28,8 +28,8 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td>TOTAL</td>
-                    <td><span id="vote_total">1000</span></td>
+                    <td><a href="#" id="calculate_total">TOTAL</a></td>
+                    <td><span id="vote_total"></span></td>
                 </tr>
             </tfoot>
         </table>

@@ -2,14 +2,26 @@
     font-family: Artial, Verdana, sans-serif;
 }
 
+.table {
+    width: 100%;
+}
+
 .table td {
     padding: 5px;
-    width: 100%;
 }
 
 .table thead td {
     background-color: #4c8abd;
     color: white;
+    width: 100%;
+}
+
+.table thead tr td:first-child {
+    width: 50%;
+}
+
+.table thead tr td:first-child + td {
+    width: 50%;
 }
 
 .panel {

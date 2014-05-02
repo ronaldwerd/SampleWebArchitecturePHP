@@ -15,7 +15,27 @@ class Service extends Controller {
 
     function votes()
     {
-        $votes = Vote::findAll();
-        echo json_encode($votes);
+        switch($this->params[2]) {
+
+            case 'all':
+                $votes = Vote::findAll();
+                echo json_encode($votes);
+
+                break;
+
+            case 'color':
+
+                if(is_numeric($this->params[3])) {
+
+                    $voteSearch = new Vote();
+                    $voteSearch->colorId = $this->params[3];
+
+                    $votes = Vote::findAll($voteSearch);
+
+                    echo json_encode($votes);
+                }
+
+                break;
+        }
     }
 }

@@ -9,20 +9,24 @@ require_once 'lib/smarty/smarty.class.php';
 
 function __autoload($className) {
 
-    if (file_exists('libs'.$className.'.php')) {
-        require_once 'libs'.$className.'.php';
+    $className = strtolower($className);
+
+    if (file_exists(APP_ROOT.'/libs/'.$className.'.php')) {
+        require_once APP_ROOT.'/libs/'.$className.'.php';
         return true;
     }
 
-    if (file_exists('models'.$className.'.php')) {
-        require_once 'models'.$className.'.php';
+    if (file_exists(APP_ROOT.'/models/'.$className.'.php')) {
+        require_once APP_ROOT.'/models/'.$className.'.php';
         return true;
     }
 
-    if (file_exists('helpers'.$className . '.php')) {
-        require_once 'helpers'.$className . '.php';
+    if (file_exists(APP_ROOT.'/helpers/'.$className . '.php')) {
+        require_once APP_ROOT.'/helpers/'.$className . '.php';
         return true;
     }
 
     return false;
 }
+
+spl_autoload_register('__autoload');

@@ -15,7 +15,10 @@
 <body>
     <div class="panel">
         <h1>Colors</h1>
-
+        <p>
+            Click on the Color Name to see how many votes for that color.<br/>
+            When you do click on Total, the sum of the above numbers will show.
+        </p>
         <table class="table" id="color_table">
             <thead>
                 <tr>

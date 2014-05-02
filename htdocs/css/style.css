@@ -3,6 +3,7 @@
 }
 
 .table {
+    margin-top: 40px;
     width: 100%;
 }
 
@@ -56,4 +57,8 @@ a {
 
 a:hover {
     color: orange;
+}
+
+p {
+    margin: 10px;
 }

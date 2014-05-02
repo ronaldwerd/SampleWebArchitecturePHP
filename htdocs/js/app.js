@@ -15,7 +15,7 @@ var AppMain = {
                 colors.each(function(c) {
 
                     var trow = _.template('<tr class="<%= bgColor %>">'  +
-                                          '<td><a href="#" data-cid="<%= cid %>" class="color_link"><%= colorName %></a><td class="vote_count"></td>' +
+                                          '<td><a href="#" data-cid="<%= cid %>" class="color_link"><%= colorName %></a><td class="vote_count" data-vote-count=""></td>' +
                                           '</tr>', {colorName: c.get('colorName'), cid: c.get('id'), bgColor: cycle});
 
                     $("#color_table tbody").append(trow);
@@ -42,7 +42,12 @@ var AppMain = {
 
         votes.fetch({
             success: function() {
-                $(voteCell).text(votes.totalVotes());
+
+                var totalVotes = votes.totalVotes()
+
+                $(voteCell).data('vote-count', totalVotes);
+                $(voteCell).text(totalVotes);
+                $(voteCell).humanizeNumber();
             }
         });
     },
@@ -53,7 +58,7 @@ var AppMain = {
 
         $('.vote_count').each(function() {
 
-            var votes = parseInt($(this).text());
+            var votes = parseInt($(this).data('vote-count'));
 
             if(!isNaN(votes)) {
                 totalVotes += votes;
@@ -61,6 +66,7 @@ var AppMain = {
         });
 
         $('#vote_total').text(totalVotes);
+        $('#vote_total').humanizeNumber();
     },
 
     run: function() {

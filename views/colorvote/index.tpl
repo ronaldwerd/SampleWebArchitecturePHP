@@ -6,6 +6,22 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    Color Vote
+    <div class="panel">
+        <h1>Colors</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Color</td>
+                    <td>Votes</td>
+                </tr>
+            </thead>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

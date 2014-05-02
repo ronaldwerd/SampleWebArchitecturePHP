@@ -14,7 +14,7 @@ class AppMain {
     public static function run()
     {
         session_start();
-        
+
         DBModel::connect();
 
         if (count($_GET) > 0) {

@@ -1,0 +1,24 @@
+* {
+    font-family: Artial, Verdana, sans-serif;
+}
+
+.table td {
+    padding: 5px;
+}
+
+.table thead td {
+    background-color: #4c8abd;
+    color: white;
+}
+
+h1 {
+    font-size: 64pt;
+    font-weight: bold;
+    color: #4c8abd;
+    font-family: Arial;
+}
+
+.panel {
+    width: 33%;
+    margin: auto;
+}

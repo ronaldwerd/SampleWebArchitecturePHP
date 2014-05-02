@@ -47,8 +47,26 @@ var AppMain = {
         });
     },
 
+    totalClick: function() {
+
+        var totalVotes = 0;
+
+        $('.vote_count').each(function() {
+
+            var votes = parseInt($(this).text());
+
+            if(!isNaN(votes)) {
+                totalVotes += votes;
+            }
+        });
+
+        $('#vote_total').text(totalVotes);
+    },
+
     run: function() {
         this.loadData();
+
+        $('#calculate_total').click(function() { AppMain.totalClick(); })
     }
 };
 

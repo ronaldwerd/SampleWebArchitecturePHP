@@ -5,7 +5,7 @@ class Color extends DBModel
     protected $primaryKey = 'id';
     protected $table = 'color';
 
-    var $colorId;
+    var $id;
     var $colorName;
 
     /*
@@ -14,7 +14,7 @@ class Color extends DBModel
      * updated through DBModel
      */
 
-    public $dataMap = array(
+    protected $dataMap = array(
         'id' => 'id',
         'color_name' => 'colorName');
 }

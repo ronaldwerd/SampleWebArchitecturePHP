@@ -2,13 +2,20 @@
 
 class Service extends Controller {
 
-    function colors() {
-        $colors = Color::findAll();
-        return json_encode($colors);
+    function __construct()
+    {
+        header("Content-type:application/json\n\n");
     }
 
-    function votes() {
+    function colors()
+    {
+        $colors = Color::findAll();
+        echo json_encode($colors);
+    }
+
+    function votes()
+    {
         $votes = Vote::findAll();
-        return json_encode($votes);
+        echo json_encode($votes);
     }
 }

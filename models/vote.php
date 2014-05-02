@@ -9,8 +9,6 @@ class Vote extends DBModel
     var $cityName;
     var $colorId;
     var $voteCount;
-    var $createdOn;
-    var $updatedOn;
 
     /*
      * The datamap maps database table columns to class members.
@@ -18,11 +16,9 @@ class Vote extends DBModel
      * is updated through DBModel
      */
 
-    public $dataMap = array(
+    protected $dataMap = array(
         'id' => 'id',
         'city_name' => 'cityName',
         'color_id' => 'colorId',
-        'vote_count' => 'voteCount',
-        'created_on' => 'createdOn',
-        'updated_on' => 'updatedOn');
+        'vote_count' => 'voteCount');
 }

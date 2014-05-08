@@ -17,3 +17,11 @@ which may effect the application down the road.
 
 A deployment script could minify js and css files when deploying to production. I am using capistrano http://capistranorb.com/
 which of version 3.0 is language agnostic.
+
+Setup
+==============================================================================================================================
+1. Create a database in MySQL. Load schema.sql then seed.sql in this order.
+2. Configure the config.php file to your database credentials, application path, and timezone settings
+3. Ensure templates_c is writable by the web server
+
+Enjoy!

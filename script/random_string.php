@@ -26,7 +26,38 @@ function randomString($len) {
         $stringBuffer .= $charArray[$rand];
     }
 
+    $stringBuffer;
+
     return $stringBuffer;
 }
 
-echo randomString(10);
+class RandomStringTest {
+
+    static function testLength($length) {
+
+        $realLength = strlen(randomString($length));
+
+        if($length == $realLength) {
+            echo "String length passed\n";
+        } else {
+            echo "String length failed\n";
+        }
+    }
+
+    static function testCharacters() {
+
+        $stringToTest = randomString(10);
+
+        $result = preg_match('/^[a-zA-Z0-9]+$/', $stringToTest);
+
+        if($result == true) {
+            echo "String characters passed\n";
+        } else {
+            echo "String characters failed\n";
+        }
+    }
+}
+
+
+RandomStringTest::testLength(10);
+RandomStringTest::testCharacters();
